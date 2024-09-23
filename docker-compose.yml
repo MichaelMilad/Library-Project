@@ -1,0 +1,30 @@
+networks:
+  app:
+
+services:
+  app:
+    build: .
+    container_name: library_app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    volumes:
+      - .:/usr/src/app
+    environment:
+      - NODE_ENV=development
+    command: ["npx", "tsx", "--watch", "src/app.ts"]
+    networks:
+      - app
+  db:
+    image: mysql:8
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: library
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    networks:
+      - app
