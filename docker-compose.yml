@@ -9,8 +9,6 @@ services:
       - "3000:3000"
     depends_on:
       - db
-    volumes:
-      - .:/usr/src/app
     environment:
       - NODE_ENV=development
     command: ["npx", "tsx", "--watch", "src/app.ts"]
