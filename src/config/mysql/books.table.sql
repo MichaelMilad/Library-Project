@@ -4,5 +4,7 @@ CREATE TABLE books (
     author VARCHAR(255),
     isbn VARCHAR(50) UNIQUE,
     available_quantity INT,
-    shelf_location VARCHAR(255)
+    shelf_location VARCHAR(255),
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );

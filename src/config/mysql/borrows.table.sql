@@ -5,6 +5,8 @@ CREATE TABLE borrows (
     borrowed_date DATE,
     due_date DATE,
     returned_date DATE,
-    FOREIGN KEY (book_id) REFERENCES books(book_id),
-    FOREIGN KEY (borrower_id) REFERENCES borrowers(borrower_id)
+    createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (book_id) REFERENCES books(id),
+    FOREIGN KEY (borrower_id) REFERENCES borrowers(id)
 );
