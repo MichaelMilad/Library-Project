@@ -1,7 +1,7 @@
 {
   "name": "library-project",
   "version": "1.0.0",
-  "description": "assessment for backend position at bosta",
+  "description": "library project",
   "main": "index.js",
   "type": "module",
   "scripts": {
