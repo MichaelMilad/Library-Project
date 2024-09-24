@@ -45,7 +45,7 @@ docker compose up --build
 This will take care of:
 
 - downloading the mysql image
-- building the source code
+- building the source code image (upon Node v20)
 - adding both to the same network
 - source code will automatically connect to the DB (hard coded credentials, env variables in docker compose file)
 - source code will automatically create the DB tables needed
@@ -63,12 +63,16 @@ localhost:3000/api/docs
 
 ### TODO List
 
-- Add Auth (Librarian Role & Manager Role) (Use Tools like Keycloak?)
+- Add Auth
+  - Use Auth Tool as Keycloak (or passport.js?)
+  - Librarian Role
+  - Manager Role
 
 - Add Unit Testing
 
 - Add Seeding Scripts to generate and populate the database when needed
 
 - Add Reporting Endpoints
-  - include node-mailer to send to email
-  - include cron jobs to run periodically
+  - using XLSX library which supports both Excel and CSV Operations
+  - include node-mailer send reports as attachments to email.
+  - include cron jobs to run periodically.
